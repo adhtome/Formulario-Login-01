@@ -24,8 +24,13 @@ body{
 
 .container .titulo {
     font-size: 25px;
-    font-weight: 500px;
+    font-weight: 500;
     position: relative;
+}
+
+.titulo{
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .container .titulo::before{
@@ -45,11 +50,121 @@ body{
 }
 
 form .detalhes-usuario .input-box{
-    margin: 20px 0 12px 0;
+    margin-bottom: 15px;
     width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.detalhes{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
 }
 
 .detalhes-usuario .input-box input{
     height: 45px;
     width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #cc81a3;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
 }
+.detalhes-usuario .input-box input:focus,
+.detalhes-usuario .input-box input:valid{
+    border-color: #cc81a3;
+}
+
+form .detalhes-genero .genero-titulo{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .categoria{
+    display: flex;
+    width: 80%;
+    margin: 14px 0 ;
+    justify-content: space-between;
+}
+
+form .categoria label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+form .categoria label .dot{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #cc81a3;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .categoria label .one,
+#dot-2:checked ~ .categoria label .two,
+#dot-3:checked ~ .categoria label .three{
+    background: #cc81a3;
+    border-color: #d9d9d9;
+}
+
+form input[type="radio"]{
+    display: none;
+}
+
+form .botao{
+    height: 45px;
+    margin: 35px 0
+}
+form .botao input{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #cc81a3, #f89b29);
+}
+
+form .botao input:hover{
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, #cc81a3, #f89b29);
+}
+
+@media(max-width: 584px){
+.container{
+    max-width: 100%;
+}
+
+form .detalhes-usuario .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+form .categoria{
+    width: 100%;
+}
+
+.content form .detalhes-usuario{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.detalhes-usuario::-webkit-scrollbar{
+    width: 5px;
+}
+
+}
+@media(max-width: 459px){
+.container .content .categoria{
+    flex-direction: column;
+}
+}
+  
